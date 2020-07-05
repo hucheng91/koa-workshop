@@ -8,14 +8,18 @@ const  Router = require('koa-router');
 const fs = require('fs')
 const app = new Koa()
 const  router = new Router();
-
+const { login } = require('./controller/login')
+const auth = require('./midware/auth')
 const {
     list,
     detail
 } = require('./controller/user')
+
+router.use(auth)
 router.get('/', async (ctx, next) => {
     ctx.body = await render('index.html')
 });
+router.post('/login', login);
 router.get('/index', async (ctx, next) => {
     ctx.body = await render('index.html')
 });
