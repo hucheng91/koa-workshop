@@ -23,10 +23,12 @@ function detail(ctx) {
     console.log(request.path) // /user/detail/1
     console.log(request.querystring) // name=3434
     console.log(request.type)
-    ctx.body = {
+    ctx.response.set("hc-test", 1)
+    ctx.response.body = {
         data: array[id],
         success: true
     }
+    ctx.response.status = 200
 }
 
 module.exports = {
