@@ -8,6 +8,7 @@
 
 [koa-rouer](./koa-router)
 [koa-contenxt](./koa-context)
+[koa-error](./koa-error)
 
 # dev
 
