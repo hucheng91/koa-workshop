@@ -5,6 +5,8 @@
  */ 
 const Koa = require('koa')
 const views = require('koa-views')
+const static = require('koa-static')
+
 const path = require('path')
 const app = new Koa()
 const router = require('./router')
@@ -13,6 +15,9 @@ const router = require('./router')
 app.use(views(path.join(__dirname, './view'), {
   extension: 'ejs'
 }))
+app.use(static(
+  path.join( __dirname,  './static')
+))
 app
   .use(router.routes())
   .use(router.allowedMethods());

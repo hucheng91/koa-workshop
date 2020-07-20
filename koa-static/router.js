@@ -22,14 +22,14 @@ router.get('/', async (ctx, next) => {
         title,
     })
 });
-router.get('/static/index.css', async (ctx, next) => {
-    ctx.response.type = 'css';
-    ctx.response.body = fs.createReadStream('static/index.css');
-});
-router.get('/static/koa.jpg', async (ctx, next) => {
-    ctx.response.type = 'image/jpg';
-    ctx.response.body = fs.createReadStream('static/koa.jpg');
-});
+// router.get('/index.css', async (ctx, next) => {
+//     ctx.response.type = 'css';
+//     ctx.response.body = fs.createReadStream('static/index.css');
+// });
+// router.get('/koa.jpg', async (ctx, next) => {
+//     ctx.response.type = 'image/jpg';
+//     ctx.response.body = fs.createReadStream('static/koa.jpg');
+// });
 router.post('/login', login);
 router.get('/index', async (ctx, next) => {
     let title = 'hello koa2'
