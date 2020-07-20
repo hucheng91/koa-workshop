@@ -6,11 +6,11 @@
 
 ## 目录结构
 
-[koa-rouer](./koa-router)
-[koa-contenxt](./koa-context)
-[koa-error](./koa-error)
-[koa-template](./koa-error)
-[koa-static](./koa-sattic)
+- [koa-rouer](./koa-router)
+- [koa-contenxt](./koa-context)
+- [koa-error](./koa-error)
+- [koa-template](./koa-error)
+- [koa-static](./koa-sattic)
 # dev
 
 1. cd  到 对应目录
