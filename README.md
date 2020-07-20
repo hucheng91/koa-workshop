@@ -10,6 +10,7 @@
 [koa-contenxt](./koa-context)
 [koa-error](./koa-error)
 [koa-template](./koa-error)
+[koa-static](./koa-sattic)
 # dev
 
 1. cd  到 对应目录
