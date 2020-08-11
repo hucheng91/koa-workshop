@@ -16,6 +16,7 @@
 - [koa-session](./koa-session)
 - [koa-cors-csrf](./koa-cors-csrf)
 - [koa-jsonp](./koa-jsonp)
+- [koa-get-post](./koa-get-post)
 
 
 # dev
