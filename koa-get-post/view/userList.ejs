@@ -1,0 +1,76 @@
+<!--
+<!--
+ * @Author: hucheng
+ * @Date: 2020-06-22 06:48:36
+ * @Description: here is des
+--> 
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link href="./index.css" rel="stylesheet">
+</head>
+<body>
+    <h1><%= title %></h1>
+    <h3>用户新增</h3>
+    <div>
+        <div>
+            用户名称 <input id="userName">
+        </div>
+        <div>
+            用户邮箱 <input id="userEmail">
+        </div>
+        <div>
+            <button id="add-button">确认新增</button>
+        </div>
+    </div>
+    <h3>用户列表</h3>
+    <div class="user-list-container">
+        <table>
+            <thead>
+                <tr>
+                    <td>编号</td>
+                    <td>名称</td>
+                    <td>邮箱</td>
+                    <td>操作</td>
+                </tr>
+            </thead>
+            <tbody id="user-tbody">
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function(){
+    initUserData()
+
+    function initUserData() {
+        $("#user-tbody").html(' ')
+        $.get('/user/list').then(function (data) {
+        data.data.forEach(element => {
+            var _this = this
+            var $tr = $("<tr></tr>");
+            $tr.append(`<td>${element.id}</td>`)
+            $tr.append(`<td>${element.name}</td>`)
+            var $button = $("<button>详情</button>")
+            $button.bind("click", function() {
+                window.open(`/user/detail/${element.id}`)
+            })
+            $tr.append($button)
+            $("#user-tbody").append($tr)
+        });
+        
+    })
+    }
+
+    $("#add-button").bind("click", function() {
+        var userName = $("#userName").val()
+        var userEmail = $("#userEmail").val()
+        $.post("/user/add", {name: userName, email: userEmail}).then(function() {
+            initUserData()
+        })
+    })
+});
+</script>
+</html>
