@@ -18,7 +18,7 @@
 - [koa-jsonp](./koa-jsonp)
 - [koa-get-post](./koa-get-post)
 - [文件上传](./koa-file-upload)
-
+- [压缩](./koa-compress)
 
 # dev
 
