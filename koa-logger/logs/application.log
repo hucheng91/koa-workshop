@@ -1,0 +1,17 @@
+[2020-08-16T22:45:11.433] [INFO] application - ctx.res.header [Object: null prototype] {}
+[2020-08-16T22:46:07.713] [INFO] application - Object [global] {
+  global: [Circular],
+  clearInterval: [Function: clearInterval],
+  clearTimeout: [Function: clearTimeout],
+  setInterval: [Function: setInterval],
+  setTimeout: [Function: setTimeout] {
+    [Symbol(nodejs.util.promisify.custom)]: [Function]
+  },
+  queueMicrotask: [Function: queueMicrotask],
+  clearImmediate: [Function: clearImmediate],
+  setImmediate: [Function: setImmediate] {
+    [Symbol(nodejs.util.promisify.custom)]: [Function]
+  },
+  '@@any-promise/REGISTRATION': { Promise: [Function: Promise], implementation: 'global.Promise' }
+} come in login
+[2020-08-16T22:46:44.999] [INFO] application - /Users/hucheng/learn/koa-workshop/koa-logger/controller come in login
