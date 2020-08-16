@@ -19,6 +19,7 @@
 - [koa-get-post](./koa-get-post)
 - [文件上传](./koa-file-upload)
 - [压缩](./koa-compress)
+- [静态资源缓存](./koa-static-cache)
 
 # dev
 
