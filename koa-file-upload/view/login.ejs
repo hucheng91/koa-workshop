@@ -1,0 +1,35 @@
+<!--
+<!--
+ * @Author: hucheng
+ * @Date: 2020-06-22 06:48:36
+ * @Description: here is des
+--> 
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link href="./index.css" rel="stylesheet">
+</head>
+<body>
+    <h1><%= title %></h1>
+    <img class="img" src="./koa.jpg">
+    <form  action="/login" method="POST" enctype="application/x-www-form-urlencoded">
+        姓名: <input name="userName" id="userName">
+        密码：<input name="passWord"  id="pass" type="password">
+        <button id="loginButton" type="submit">登录</button>
+    </form>
+    <script>
+        // document.querySelector('#loginButton').addEventListener('click', function() {
+        //     var userName = document.querySelector('#userName').value
+        //     var password = document.querySelector('#pass').value
+        //     fetch("http://localhost:3000/login", {
+        //         "headers": {
+        //             "content-type": "application/x-www-form-urlencoded",
+        //         },
+        //         "body": "userName=gfsdfgsd&passWord=sdfasfsd",
+        //         "method": "POST",
+        //         });
+        // })
+    </script>
+</body>
+</html>
