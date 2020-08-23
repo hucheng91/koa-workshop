@@ -17,13 +17,13 @@
 - [koa-cors-csrf](./koa-cors-csrf)
 - [koa-jsonp](./koa-jsonp)
 - [koa-get-post](./koa-get-post)
-- [文件上传](./koa-file-upload)
-- [压缩](./koa-compress)
-- [静态资源缓存](./koa-static-cache)
-- [文件下载](./koa-file-download)
-- [日志](./koa-logger)
-- [应用环境配置](./koa-env)
-- [Mysql 操作](./koa-mysql)
+- [koa-file-upload 文件上传](./koa-file-upload)
+- [koa-compress 压缩](./koa-compress)
+- [koa-static-cache 静态资源缓存](./koa-static-cache)
+- [koa-file-download 文件下载](./koa-file-download)
+- [koa-logger 日志](./koa-logger)
+- [koa-env 应用环境配置](./koa-env)
+- [koa-mysql Mysql 操作](./koa-mysql)
 
 # dev
 
