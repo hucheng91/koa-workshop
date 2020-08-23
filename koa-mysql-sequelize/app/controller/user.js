@@ -7,6 +7,7 @@
 const User = require('../models/user')
 async function list(ctx) {
     const data = await User.findAll()
+    console.log('查询到：', data)
     ctx.body = {
         data: data,
         success: true
@@ -14,7 +15,7 @@ async function list(ctx) {
 }
 async function detail(ctx) {
     const id = ctx.params.id
-    const data = await User.findByPk(id)
+    const data = await ctx.model.User.findByPk(id)
     ctx.body = {
         data: data[0],
         success: true
