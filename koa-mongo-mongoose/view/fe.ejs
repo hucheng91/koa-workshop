@@ -1,0 +1,28 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link href="./index.css" rel="stylesheet">
+</head>
+<body>
+    <h1>发起一个跨域请求</h1>
+    <script>
+        getDataByJsonp("http://localhost:3000/user/list", (data) => {
+            console.log('返回数据:', data)
+        })
+        function getDataByJsonp(url, callback) {
+            const jsonpCallback = (data) => {
+                document.querySelector('script#jsonpCallback').remove()
+                callback(data)
+            }
+            window['jsonpCallback'] = jsonpCallback
+            
+            const $script = document.createElement("script")
+            $script.id = "jsonpCallback"
+            $script.src = `${url}?callback=jsonpCallback`
+            document.getElementsByTagName("head")[0].appendChild($script)
+        }
+    </script>
+</body>
+</html>
