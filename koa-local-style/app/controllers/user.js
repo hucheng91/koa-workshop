@@ -10,6 +10,7 @@ const {
     add,
     remove
 }  = require('../services/user')
+
 async function list(ctx) {
     const data = await findAll()
     ctx.body = {
@@ -19,7 +20,7 @@ async function list(ctx) {
 }
 async function detail(ctx) {
     const id = ctx.params.id
-    if(!id) {
+    if(id == 1) {
         ctx.body = {
             messge: "参数ID不能为空",
             success: true
@@ -50,19 +51,21 @@ async function add(ctx) {
     }
 }
 async function  remove(ctx) {
-    const id = ctx.params.id
-    const data = await remove(id)
-    ctx.body = {
-        data: data[0],
-        success: true
-    }
+        const id = ctx.params.id
+        const data = await remove(id)
+        ctx.body = {
+            data: data[0],
+            success: true
+        }
 }
 async function update(ctx) {
 }
+
 module.exports = {
     detail,
     list,
     add,
     remove,
-    update
+    update,
+    HelloWorld
 }
