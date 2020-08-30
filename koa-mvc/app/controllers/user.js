@@ -49,7 +49,7 @@ async function add(ctx) {
         success: true,
     }
 }
-async function  remove(params) {
+async function  remove(ctx) {
     const id = ctx.params.id
     const data = await remove(id)
     ctx.body = {
@@ -57,9 +57,12 @@ async function  remove(params) {
         success: true
     }
 }
+async function update(ctx) {
+}
 module.exports = {
     detail,
     list,
     add,
-    remove
+    remove,
+    update
 }

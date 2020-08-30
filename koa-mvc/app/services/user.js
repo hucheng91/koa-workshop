@@ -13,6 +13,7 @@ async function  remove(id) {
     const data = await User.destroy(id)
     return data
 }
+
 module.exports = {
     findAll,
     findById,
