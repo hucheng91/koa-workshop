@@ -1,7 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 const { getConnection } = require("../db/mysql");
-const User = require("./user");
 let modelObj = {};
 fs.readdirSync(__dirname)
     .filter(function (file) {

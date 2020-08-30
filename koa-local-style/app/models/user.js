@@ -1,4 +1,4 @@
-const { Sequelize, DataTypes, Model } = require("sequelize");
+const { DataTypes, Model } = require("sequelize");
 const { getConnection } = require("../db/mysql");
 // @ts-ignore
 class User extends Model {}

@@ -1,6 +1,5 @@
 const send = require("koa-send");
 const fs = require("fs");
-const path = require("path");
 const archiver = require("archiver");
 
 async function download(ctx) {
