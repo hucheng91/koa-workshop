@@ -28,6 +28,7 @@
 - [koa-mongo MongoDB 基本使用](./koa-mongo)
 - [koa-mongo-mongoose mongoose 基本使用](./koa-mongo-mongoose)
 - [项目框架结构设计](./koa-mvc)
+- [本地开发规范  eslint + Prettier + husky + lint-staged](./koa-mvc)
 
 # dev
 
