@@ -7,10 +7,12 @@ module.exports = {
         es2020: true,
     },
     extends: ["eslint:recommended"],
+    plugins: ["prettier"],
     parserOptions: {
         ecmaVersion: 12,
     },
     rules: {
+        "prettier/prettier": "error",
         "no-console": 0, // 允许 console
         "no-empty": "error",
         eqeqeq: "error",
