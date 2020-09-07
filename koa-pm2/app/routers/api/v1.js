@@ -10,9 +10,6 @@ const {
     removeUser,
 } = require("../../controllers/user");
 const { download, downloadAll } = require("../../controllers/downloadFile");
-router.get("/", async (ctx) => {
-    ctx.body = "ok";
-});
 router.post(`/api/${BASE_API}/login`, login);
 router.get(`/api/${BASE_API}/download/:name`, download);
 router.get(`/api/${BASE_API}/downloadAll`, downloadAll);

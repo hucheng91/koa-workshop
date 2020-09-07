@@ -9,7 +9,7 @@ const static = require('koa-static')
 const koaBody = require('koa-body')
 const path = require('path')
 const app = new Koa()
-const router = require('./router')
+const router = require('./app/routers')
 const config = require('./app/config')
 const { logger, accessLogger } = require('./app/log4j/logger')
 const model = require('./app/models/index')
@@ -36,7 +36,7 @@ app.use(koaBody({
   }
 }));
 // 加载模板引擎
-app.use(views(path.join(__dirname, './view'), {
+app.use(views(path.join(__dirname, './views'), {
   extension: 'ejs'
 }))
 app.use(static(

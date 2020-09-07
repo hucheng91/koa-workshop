@@ -32,7 +32,7 @@ async function detail(ctx) {
         success: true
     }
 }
-async function add(ctx) {
+async function addUser(ctx) {
     const { path } =  ctx.request.files.file 
     const { name, email } = ctx.request.body // 获取 request body 字段
     const imgUrl = path.split("/static")[1]
@@ -49,7 +49,7 @@ async function add(ctx) {
         success: true,
     }
 }
-async function  remove(ctx) {
+async function  removeUser(ctx) {
     const id = ctx.params.id
     const data = await remove(id)
     ctx.body = {
@@ -62,7 +62,7 @@ async function update(ctx) {
 module.exports = {
     detail,
     list,
-    add,
-    remove,
+    addUser,
+    removeUser,
     update
 }

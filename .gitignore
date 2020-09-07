@@ -6,3 +6,4 @@ koa-context/node_modules
 koa-error/node_modules/
 koa-mysql/node_modules/
 koa-local-style/node_modules/
+koa-pm2/node_modules/
