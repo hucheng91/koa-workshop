@@ -7,3 +7,5 @@ koa-error/node_modules/
 koa-mysql/node_modules/
 koa-local-style/node_modules/
 koa-pm2/node_modules/
+koa-typescript/app/routers/.DS_Store
+koa-typescript/.DS_Store

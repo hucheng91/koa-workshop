@@ -1,0 +1,92 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link href="./css/index.css" rel="stylesheet">
+</head>
+<body>
+    <h1><%= title %></h1>
+    <h3>用户新增</h3>
+    <div>
+        <div>
+            用户名称 <input id="userName">
+        </div>
+        <div>
+            用户邮箱 <input id="userEmail">
+        </div>
+        <div>
+            头像 <input id="photo" type="file"  multiple>
+        </div>
+        <div>
+            <button id="add-button">确认新增</button>
+        </div>
+    </div>
+    <h3>用户列表</h3>
+    <div class="user-list-container">
+        <table>
+            <thead>
+                <tr>
+                    <td>编号</td>
+                    <td>名称</td>
+                    <td>邮箱</td>
+                    <td>头像</td>
+                    <td>操作</td>
+                </tr>
+            </thead>
+            <tbody id="user-tbody">
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="js/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function(){
+    initUserData()
+    function initUserData() {
+        $("#user-tbody").html(' ')
+        $.get('/api/v1/user').then(function (data) {
+            data.data.forEach(element => {
+                var _this = this
+                var $tr = $("<tr></tr>");
+                $tr.append(`<td>${element.id}</td>`)
+                $tr.append(`<td>${element.name}</td>`)
+                $tr.append(`<td>${element.email}</td>`)
+                if(element.imgUrl) {
+                    $tr.append(`<td><img src= "${element.imgUrl}" style="width: 50px;"></td>`)
+                } else {
+                    $tr.append(`<td></td>`)
+                }
+                var $button = $("<button>详情</button>")
+                $button.bind("click", function() {
+                    window.open(`/api/v1/user/${element.id}`)
+                })
+                $tr.append($button)
+                $("#user-tbody").append($tr)
+            });
+    })
+    }
+
+    $("#add-button").bind("click", function() {
+        var userName = $("#userName").val()
+        var userEmail = $("#userEmail").val()
+        var files = $("#photo")[0].files
+        var formData = new FormData()
+        formData.append("name", userName)
+        formData.append("email", userEmail)
+        formData.append(`file`, files[0])
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: "/api/v1/user/add",
+            data: formData, 
+            processData: false,
+            contentType: false,
+            cache: false,
+            success: function(data){
+                initUserData()
+            }
+        });
+    })
+});
+</script>
+</html>
