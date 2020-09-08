@@ -31,7 +31,6 @@ if (process.env.HOST) {
 /**
  * 创建 Http Server
  */
-console.log("appapapapapap：", app);
 const server = http.createServer(app.callback());
 server.listen(port, host);
 server.on("error", onError);
