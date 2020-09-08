@@ -1,13 +1,9 @@
 {
     "version": "4.0.2",
     "compilerOptions": {
-        "lib": ["es6"],
-        "target": "es6",
+        "target": "es2017",
         "module": "CommonJS",
-        "moduleResolution": "node",
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "sourceMap": true,
+        "inlineSourceMap": true,
     },
     "include": [
         "app/**/*",

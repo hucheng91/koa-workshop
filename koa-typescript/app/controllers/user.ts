@@ -5,15 +5,19 @@
  * @Description: here is des
  */
 import { findAll, findById, add, remove } from "../services/user";
-
-async function list(ctx) {
+import { Context } from "koa";
+interface AddRequestBody {
+    name: string;
+    email: string;
+}
+async function list(ctx: Context) {
     const data = await findAll();
     ctx.body = {
         data: data,
         success: true,
     };
 }
-async function detail(ctx) {
+async function detail(ctx: Context) {
     const id = ctx.params.id;
     if (id === null) {
         ctx.body = {
@@ -28,9 +32,9 @@ async function detail(ctx) {
         success: true,
     };
 }
-async function addUser(ctx) {
+async function addUser(ctx: Context) {
     const { path } = ctx.request.files.file;
-    const { name, email } = ctx.request.body; // 获取 request body 字段
+    const { name, email } = <AddRequestBody>ctx.request.body; // 获取 request body 字段
     const imgUrl = path.split("/static")[1];
     if (!name || !email || !imgUrl) {
         ctx.body = {
@@ -45,7 +49,7 @@ async function addUser(ctx) {
         success: true,
     };
 }
-async function removeUser(ctx) {
+async function removeUser(ctx: Context) {
     const id = ctx.params.id;
     const data = await remove(id);
     ctx.body = {

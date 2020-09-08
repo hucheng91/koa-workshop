@@ -8,12 +8,12 @@ import * as koaBody from "koa-body";
 import * as Static from "koa-static";
 import * as Views from "koa-views";
 import * as path from "path";
-const app = new Koa();
 import router from "./app/routers";
 import config from "./app/config";
 import { logger, accessLogger } from "./app/log4j/logger";
 import model from "./app/models/index";
 
+const app = new Koa();
 app.use(accessLogger());
 app.use(async (ctx, next) => {
     ctx.model = model;
