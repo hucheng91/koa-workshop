@@ -1,0 +1,8 @@
+domain_name=koa-test
+app_dir=/data/app
+app_name=koa-test
+ip=xxx.xxx.xxx.xxx
+ssh work@$ip "mkdir -p ${app_dir}/${domain_name}/releases/${CI_COMMIT_TAG}"
+rsync -az ./ --exclude .git --exclude .gitignore work@$ip:${app_dir}/${domain_name}/releases/${CI_COMMIT_TAG}
+ssh work@$ip "ln -snf ${app_dir}/${domain_name}/releases/${CI_COMMIT_TAG} ${app_dir}/${domain_name}/current"
+ssh work@$ip "cd ${app_dir}/${domain_name}/current && npm run start:prd" 

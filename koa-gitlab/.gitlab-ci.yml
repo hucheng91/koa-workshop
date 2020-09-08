@@ -1,0 +1,18 @@
+image: node:latest
+cache:
+    paths:
+      - node_modules/
+stages:
+  - install_deps
+  - deploy
+
+install_deps:
+  stage: install_deps
+  script: 
+    -  npm install
+deploy:
+  stage: deploy
+  only:
+    - tags
+  script:
+    - sh ./deploy

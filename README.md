@@ -31,6 +31,7 @@
 - [本地开发规范  eslint + Prettier + husky + lint-staged](./koa-mvc)
 - [koa-pm2](./koa-pm2)
 - [koa-typescript](./koa-typescript)
+- [koa-gitlab](./koa-gitlab)
 
 # dev
 
