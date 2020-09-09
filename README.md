@@ -21,6 +21,7 @@
 - [koa-compress 压缩](./koa-compress)
 - [koa-static-cache 静态资源缓存](./koa-static-cache)
 - [koa-file-download 文件下载](./koa-file-download)
+- [koa-debugging](./koa-debug)
 - [koa-logger 日志](./koa-logger)
 - [koa-env 应用环境配置](./koa-env)
 - [koa-mysql Mysql 操作](./koa-mysql)
